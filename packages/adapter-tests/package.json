@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/feathersjs/feathers.git"
+    "url": "git://github.com/feathersjs/databases.git"
   },
   "author": {
     "name": "Feathers contributor",
@@ -22,14 +22,16 @@
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/feathersjs/feathers/issues"
+    "url": "https://github.com/feathersjs/databases/issues"
   },
   "engines": {
     "node": ">= 10"
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha --config ../../.mocharc.json  --recursive test/**.test.ts test/**/*.test.ts"
+    "prepublish": "npm run compile",
+    "compile": "shx rm -rf lib/ && tsc",
+    "test": "mocha --config ../../.mocharc.json --recursive test/**.test.ts test/**/*.test.ts"
   },
   "directories": {
     "lib": "lib"
